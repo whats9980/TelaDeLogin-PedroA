@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', funcion () {
+document.addEventListener('DOMContentLoaded', function () {
     const loginForm = document.getElementById('loginform');
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', funcion () {
             showError(emailInput, 'E-mail inválido');
             return false;
         } else {
-            showSucess(emailInput);
+            showSuccess(emailInput);
             return true;
         }
     }
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', funcion () {
             showError(passwordInput, 'Senha deve ter pelo menos 6 caracteres');
             return false;
         } else {
-            showSucess(passwordInput);
+            showSuccess(passwordInput);
             return true;
         }
     }
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', funcion () {
         const inputGroup = input.parentElement;
 
 
-        input.classList.remove('sucess');
+        input.classList.remove('success');
 
 
         input.classList('error');
@@ -80,14 +80,14 @@ document.addEventListener('DOMContentLoaded', funcion () {
         inputGroup.appendChild(errorElement);
     }
 
-    function showSucess(input) {
+    function showSuccess(input) {
         const inputGroup = input.parentElement;
 
 
         input.classList.remove('error');
 
 
-        input.classList.add('sucess');
+        input.classList.add('success');
 
 
         const existingError = inputGroup.querySelector('.error-message');
