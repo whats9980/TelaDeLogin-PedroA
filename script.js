@@ -72,5 +72,27 @@ document.addEventListener('DOMContentLoaded', funcion () {
         if (existingError) {
             existingError.remove();
         }
+
+
+        const errorElement = document.createElement('div');
+        errorElement.className = 'error-message';
+        errorElement.innerText = message;
+        inputGroup.appendChild(errorElement);
     }
-}
+
+    function showSucess(input) {
+        const inputGroup = input.parentElement;
+
+
+        input.classList.remove('error');
+
+
+        input.classList.add('sucess');
+
+
+        const existingError = inputGroup.querySelector('.error-message');
+        if (existingError) {
+            existingError.remove();
+        }
+    }
+});
