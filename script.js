@@ -1,18 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const loginForm = document.getElementById('loginform');
+    const loginForm = document.getElementById('loginForm');
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
 
 
-    loginForm.addEventListener('submit', funcion (event) {
-        event.preventDefault();
-
-
-        if (validadeForm()) {
-
+    loginForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (validateForm()) {
             alert('Login realizado com sucesso!');
-
-
         }
     });
 
@@ -20,11 +15,11 @@ document.addEventListener('DOMContentLoaded', function () {
     emailInput.addEventListener('blur', validateEmail);
     passwordInput.addEventListener('blur', validatePassword);
 
-    function validadeForm() {
-        const ifEmailValid = validateEmail();
+    function validateForm() {
+        const isEmailValid = validateEmail();
         const isPasswordValid = validatePassword();
 
-        return isEmailValid && isPasswordValid
+        return isEmailValid && isPasswordValid;
     }
 
     function validateEmail() {
@@ -43,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    function validadePassword() {
+    function validatePassword() {
         const password = passwordInput.value.trim();
 
         if (password === '') {
@@ -65,14 +60,13 @@ document.addEventListener('DOMContentLoaded', function () {
         input.classList.remove('success');
 
 
-        input.classList('error');
+        input.classList.add('error');
 
 
         const existingError = inputGroup.querySelector('.error-message');
         if (existingError) {
             existingError.remove();
         }
-
 
         const errorElement = document.createElement('div');
         errorElement.className = 'error-message';
